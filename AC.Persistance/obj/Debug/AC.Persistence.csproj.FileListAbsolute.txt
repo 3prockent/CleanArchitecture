@@ -1,0 +1,3 @@
+C:\Users\Vlad\Desktop\CleanArchitecture\AC.Persistance\obj\Debug\AC.Persistence.csproj.AssemblyReference.cache
+C:\Users\Vlad\Desktop\CleanArchitecture\AC.Persistance\obj\Debug\AC.Persistence.csproj.SuggestedBindingRedirects.cache
+C:\Users\Vlad\Desktop\CleanArchitecture\AC.Persistance\obj\Debug\AC.Persistence.csproj.CoreCompileInputs.cache

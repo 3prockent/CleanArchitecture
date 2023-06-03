@@ -1,0 +1,3 @@
+C:\Users\Vlad\Desktop\CleanArchitecture\AC.Domain\obj\Debug\AC.Domain.csproj.AssemblyReference.cache
+C:\Users\Vlad\Desktop\CleanArchitecture\AC.Domain\obj\Debug\AC.Domain.csproj.SuggestedBindingRedirects.cache
+C:\Users\Vlad\Desktop\CleanArchitecture\AC.Domain\obj\Debug\AC.Domain.csproj.CoreCompileInputs.cache

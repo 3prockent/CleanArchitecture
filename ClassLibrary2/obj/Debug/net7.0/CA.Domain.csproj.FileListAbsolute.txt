@@ -1,0 +1,12 @@
+C:\Users\Vlad\Desktop\CleanArchitecture\ClassLibrary2\bin\Debug\net7.0\CA.Domain.deps.json
+C:\Users\Vlad\Desktop\CleanArchitecture\ClassLibrary2\bin\Debug\net7.0\CA.Domain.dll
+C:\Users\Vlad\Desktop\CleanArchitecture\ClassLibrary2\bin\Debug\net7.0\CA.Domain.pdb
+C:\Users\Vlad\Desktop\CleanArchitecture\ClassLibrary2\obj\Debug\net7.0\CA.Domain.csproj.AssemblyReference.cache
+C:\Users\Vlad\Desktop\CleanArchitecture\ClassLibrary2\obj\Debug\net7.0\CA.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vlad\Desktop\CleanArchitecture\ClassLibrary2\obj\Debug\net7.0\CA.Domain.AssemblyInfoInputs.cache
+C:\Users\Vlad\Desktop\CleanArchitecture\ClassLibrary2\obj\Debug\net7.0\CA.Domain.AssemblyInfo.cs
+C:\Users\Vlad\Desktop\CleanArchitecture\ClassLibrary2\obj\Debug\net7.0\CA.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Vlad\Desktop\CleanArchitecture\ClassLibrary2\obj\Debug\net7.0\CA.Domain.dll
+C:\Users\Vlad\Desktop\CleanArchitecture\ClassLibrary2\obj\Debug\net7.0\refint\CA.Domain.dll
+C:\Users\Vlad\Desktop\CleanArchitecture\ClassLibrary2\obj\Debug\net7.0\CA.Domain.pdb
+C:\Users\Vlad\Desktop\CleanArchitecture\ClassLibrary2\obj\Debug\net7.0\ref\CA.Domain.dll
