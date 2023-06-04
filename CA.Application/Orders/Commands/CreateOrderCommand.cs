@@ -1,5 +1,8 @@
-﻿using CA.Application.Interfaces;
+﻿using CA.Application.Abstractions.Messaging;
+using CA.Application.Interfaces;
 using CA.Domain.Entities;
+using CA.Domain.Errors;
+using CA.Domain.Shared;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -9,24 +12,25 @@ using System.Threading.Tasks;
 
 namespace CA.Application.Orders.Commands
 {
-    public class CreateOrderCommand : IRequest<Guid>
+    public class CreateOrderCommand : ICommand<Guid>
     {
         public string? ContactName { get; set; }
         public string? Number { get; set; }
         public string? Comment { get; set; }
         public decimal Amount { get; set; }
-        public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommand, Guid>
+        public class CreateOrderCommandHandler : ICommandHandler<CreateOrderCommand, Guid>
         {
             private readonly IDbContext _context;
             public CreateOrderCommandHandler(IDbContext context)
             {
                 _context = context;
             }
-            public async Task<Guid> Handle(CreateOrderCommand command, CancellationToken cancellationToken)
+            public async Task<Result<Guid>> Handle(CreateOrderCommand command, CancellationToken cancellationToken)
             {
-                //if (String.IsNullOrEmpty(command.Number))
-                //    return Result
-                //if_context.Orders.Any(co)) { }
+                if (String.IsNullOrEmpty(command.Number))
+                    return Result.Failure<Guid>(DomainErrors.Order.EmptyNumber);
+                if (_context.Orders.Any(x => x.Number == command.Number))
+                    return Result.Failure<Guid>(DomainErrors.Order.AlreadyExist(command.Number));
                 var product = new Order()
                 {
                     ContactName = command.ContactName,

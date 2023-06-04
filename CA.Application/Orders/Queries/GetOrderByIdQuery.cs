@@ -1,5 +1,6 @@
 ﻿using CA.Application.Interfaces;
 using CA.Domain.Entities;
+using CA.Domain.Shared;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -9,23 +10,29 @@ using System.Threading.Tasks;
 
 namespace CA.Application.Orders.Queries
 {
-        public class GetOrderByIdQuery : IRequest<Order>
+    public class GetOrderByIdQuery : IRequest<Result<Order>>
+    {
+        public Guid Id { get; set; }
+        public class GetOrderByIdQueryHandler : IRequestHandler<GetOrderByIdQuery, Result<Order>>
         {
-            public Guid Id { get; set; }
-            public class GetOrderByIdQueryHandler : IRequestHandler<GetOrderByIdQuery, Order>
+            private readonly IDbContext _context;
+            public GetOrderByIdQueryHandler(IDbContext context)
             {
-                private readonly IDbContext _context;
-                public GetOrderByIdQueryHandler(IDbContext context)
+                _context = context;
+            }
+            public async Task<Result<Order>> Handle(GetOrderByIdQuery query, CancellationToken cancellationToken)
+            {
+                var product = _context.Orders.Where(a => a.Id == query.Id).FirstOrDefault();
+                if (product == null)
                 {
-                    _context = context;
+                    return Result.Failure<Order>(new Error(
+                        "Order.NotFound",
+                        $"The Order with Id {query.Id} NotFound"));
                 }
-                public async Task<Order> Handle(GetOrderByIdQuery query, CancellationToken cancellationToken)
-                {
-                    var product = _context.Orders.Where(a => a.Id == query.Id).FirstOrDefault();
-                    return product;
-                }
+                return product;
+            }
 
 
         }
-        }
+    }
 }

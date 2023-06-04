@@ -29,6 +29,8 @@ builder.Services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies()); //applicat
 
 var assembly = AppDomain.CurrentDomain.Load("CA.Persistence");
 
+
+
 var app = builder.Build();
 
 #region Configuration
