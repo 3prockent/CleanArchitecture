@@ -24,11 +24,16 @@ namespace CA.Application.Orders.Commands
             }
             public async Task<Guid> Handle(CreateOrderCommand command, CancellationToken cancellationToken)
             {
-                var product = new Order();
-                product.ContactName = command.ContactName;
-                product.Number = command.Number;
-                product.Comment = command.Comment;
-                product.Amount = command.Amount;
+                //if (String.IsNullOrEmpty(command.Number))
+                //    return Result
+                //if_context.Orders.Any(co)) { }
+                var product = new Order()
+                {
+                    ContactName = command.ContactName,
+                    Number = command.Number,
+                    Comment = command.Comment,
+                    Amount = command.Amount
+                };
                 _context.Orders.Add(product);
                 await _context.SaveChangesAsync();
                 return product.Id;
