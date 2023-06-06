@@ -1,5 +1,6 @@
 ﻿using CA.Application.Orders.Commands;
 using CA.Application.Orders.Queries;
+using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,6 +10,11 @@ namespace AC.WebAPI.Controllers
     [ApiController]
     public class OrderController : BaseApiController
     {
+
+        public OrderController(IMediator mediator) : base(mediator)
+        {
+            
+        }
         [HttpGet, Route("GetAll")]
         public async Task<IActionResult> GetAll()
         {

@@ -1,3 +1,0 @@
-C:\Users\Vlad\Desktop\CleanArchitecture\AC.Application\obj\Debug\AC.Application.csproj.AssemblyReference.cache
-C:\Users\Vlad\Desktop\CleanArchitecture\AC.Application\obj\Debug\AC.Application.csproj.SuggestedBindingRedirects.cache
-C:\Users\Vlad\Desktop\CleanArchitecture\AC.Application\obj\Debug\AC.Application.csproj.CoreCompileInputs.cache

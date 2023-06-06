@@ -9,7 +9,11 @@ namespace AC.WebAPI.Controllers
     {
         private IMediator? _mediator;
 
-        protected IMediator Mediator => _mediator ??= HttpContext.RequestServices.GetService<IMediator>();
+        public IMediator Mediator => _mediator ??= HttpContext.RequestServices.GetService<IMediator>();
+        public BaseApiController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
     }
 
 }

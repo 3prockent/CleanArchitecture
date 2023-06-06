@@ -9,23 +9,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{A6C68FF4-3488-4802-896E-13BCC065D99C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AC.WebAPI", "AC.WebAPI\AC.WebAPI.csproj", "{95243437-DA1B-4ACD-BD68-A4D4CEE06DA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AC.WebAPI", "AC.WebAPI\AC.WebAPI.csproj", "{95243437-DA1B-4ACD-BD68-A4D4CEE06DA6}"
 	ProjectSection(ProjectDependencies) = postProject
 		{3E1FC066-BC5E-472A-BAB9-048D80074F3E} = {3E1FC066-BC5E-472A-BAB9-048D80074F3E}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CA.Domain", "ClassLibrary2\CA.Domain.csproj", "{BF982CAE-AEAD-460A-8AE7-77C2B0502C24}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CA.Domain", "CA.Domain\CA.Domain.csproj", "{BF982CAE-AEAD-460A-8AE7-77C2B0502C24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CA.Application", "CA.Application\CA.Application.csproj", "{C40BDB21-671D-40A1-A19B-79AEA52DB1F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CA.Application", "CA.Application\CA.Application.csproj", "{C40BDB21-671D-40A1-A19B-79AEA52DB1F7}"
 	ProjectSection(ProjectDependencies) = postProject
 		{BF982CAE-AEAD-460A-8AE7-77C2B0502C24} = {BF982CAE-AEAD-460A-8AE7-77C2B0502C24}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CA.Persistence", "CA.Persistence\CA.Persistence.csproj", "{3E1FC066-BC5E-472A-BAB9-048D80074F3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CA.Persistence", "CA.Persistence\CA.Persistence.csproj", "{3E1FC066-BC5E-472A-BAB9-048D80074F3E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5746E134-6EEB-45A3-A678-418C013E1252}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "OrderControllerTests\Tests.csproj", "{F7F08CF0-7D17-490A-8978-C8D5B2E54146}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "OrderControllerTests\Tests.csproj", "{F7F08CF0-7D17-490A-8978-C8D5B2E54146}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
