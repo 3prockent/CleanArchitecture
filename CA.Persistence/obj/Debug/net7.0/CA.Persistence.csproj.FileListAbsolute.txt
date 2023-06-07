@@ -1,0 +1,16 @@
+C:\Users\Vlad\Desktop\CleanArchitecture\CA.Persistence\bin\Debug\net7.0\CA.Persistence.deps.json
+C:\Users\Vlad\Desktop\CleanArchitecture\CA.Persistence\bin\Debug\net7.0\CA.Persistence.dll
+C:\Users\Vlad\Desktop\CleanArchitecture\CA.Persistence\bin\Debug\net7.0\CA.Persistence.pdb
+C:\Users\Vlad\Desktop\CleanArchitecture\CA.Persistence\bin\Debug\net7.0\CA.Application.dll
+C:\Users\Vlad\Desktop\CleanArchitecture\CA.Persistence\obj\Debug\net7.0\CA.Persistence.csproj.AssemblyReference.cache
+C:\Users\Vlad\Desktop\CleanArchitecture\CA.Persistence\obj\Debug\net7.0\CA.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vlad\Desktop\CleanArchitecture\CA.Persistence\obj\Debug\net7.0\CA.Persistence.AssemblyInfoInputs.cache
+C:\Users\Vlad\Desktop\CleanArchitecture\CA.Persistence\obj\Debug\net7.0\CA.Persistence.AssemblyInfo.cs
+C:\Users\Vlad\Desktop\CleanArchitecture\CA.Persistence\obj\Debug\net7.0\CA.Persistence.csproj.CopyComplete
+C:\Users\Vlad\Desktop\CleanArchitecture\CA.Persistence\obj\Debug\net7.0\CA.Persistence.dll
+C:\Users\Vlad\Desktop\CleanArchitecture\CA.Persistence\obj\Debug\net7.0\refint\CA.Persistence.dll
+C:\Users\Vlad\Desktop\CleanArchitecture\CA.Persistence\obj\Debug\net7.0\CA.Persistence.pdb
+C:\Users\Vlad\Desktop\CleanArchitecture\CA.Persistence\obj\Debug\net7.0\ref\CA.Persistence.dll
+C:\Users\Vlad\Desktop\CleanArchitecture\CA.Persistence\bin\Debug\net7.0\CA.Persistence.runtimeconfig.json
+C:\Users\Vlad\Desktop\CleanArchitecture\CA.Persistence\obj\Debug\net7.0\CA.Persistence.genruntimeconfig.cache
+C:\Users\Vlad\Desktop\CleanArchitecture\CA.Persistence\obj\Debug\net7.0\CA.Persistence.csproj.CoreCompileInputs.cache
