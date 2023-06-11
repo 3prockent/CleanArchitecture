@@ -1,12 +1,6 @@
-using CA.Application.Interfaces;
-using CA.Application.Orders.Commands;
-using CA.Domain.Entities;
-using CA.Domain.Errors;
-using CA.Domain.Shared;
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
-using Moq;
-using Moq.EntityFrameworkCore;
+
 
 namespace Tests
 
@@ -89,37 +83,8 @@ namespace Tests
 
             //Assert
             _dbContextMock.Verify(
-                x => x.Orders.Add(It.Is<Order>(o => o.Id == result.Value)),
+                context => context.Orders.Add(It.Is<Order>(order => order.Id == result.Value)),
                 Times.Once);
         }
-
-
     }
-
-
-
-    internal static class TestDataHelper
-    {
-        public static List<Order> GetFakeOrderList()
-        {
-            return new List<Order>()
-            {
-                new Order
-                {
-                        Number = "2",
-                        ContactName = "Vlad",
-                        Comment = "123 delivery",
-                        Amount = 100.00M
-                },
-                new Order
-                {
-                    Number = "3",
-                    ContactName = "Alex",
-                    Comment = "222 delivery",
-                    Amount = 200.00M
-                }
-            };
-        }
-    }
-
 }

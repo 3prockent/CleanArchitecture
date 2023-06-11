@@ -5,6 +5,7 @@ using CA.Domain.Entities;
 using CA.Domain.Errors;
 using CA.Domain.Shared;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +34,7 @@ internal class CreateOrderCommandHandler : ICommandHandler<CreateOrderCommand, G
     {
         if (String.IsNullOrEmpty(command.Number))
             return Result.Failure<Guid>(DomainErrors.Order.EmptyNumber);
-        if (_context.Orders.Any(x => x.Number == command.Number))
+        if (await _context.Orders.AnyAsync(x => x.Number == command.Number, cancellationToken))
             return Result.Failure<Guid>(DomainErrors.Order.AlreadyExist(command.Number));
         var product = new Order()
         {

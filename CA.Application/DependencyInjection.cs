@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace CA.Application
 {
-    public static class DependencyInjection
+    public static class DependencyInjectionExtensions
     {
         public static void AddApplication(this IServiceCollection services)
         {

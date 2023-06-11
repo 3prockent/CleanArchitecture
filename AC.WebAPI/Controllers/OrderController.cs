@@ -9,11 +9,7 @@ namespace AC.WebAPI.Controllers
     [ApiController]
     public class OrderController : BaseApiController
     {
-
-        public OrderController(IMediator mediator) : base(mediator)
-        {
-
-        }
+        public OrderController(IMediator mediator) : base(mediator) {}
         [HttpGet, Route("")]
         public async Task<IActionResult> GetAll(CancellationToken ct)
         {

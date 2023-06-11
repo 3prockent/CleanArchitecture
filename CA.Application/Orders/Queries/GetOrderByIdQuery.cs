@@ -1,5 +1,6 @@
 ﻿using CA.Application.Interfaces;
 using CA.Domain.Entities;
+using CA.Domain.Errors;
 using CA.Domain.Shared;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -24,12 +25,10 @@ namespace CA.Application.Orders.Queries
             public async Task<Result<Order>> Handle(GetOrderByIdQuery query, CancellationToken cancellationToken)
             {
 
-                var product = await _context.Orders.Where(a => a.Id == query.Id).FirstOrDefaultAsync(cancellationToken);
+                var product = await _context.Orders.FirstOrDefaultAsync(order => order.Id == query.Id, cancellationToken);
                 if (product == null)
                 {
-                    return Result.Failure<Order>(new Error(
-                        "Order.NotFound",
-                        $"The Order with Id {query.Id} NotFound"));
+                    return Result.Failure<Order>(DomainErrors.Order.NotFound(query.Id));
                 }
                 return product;
             }

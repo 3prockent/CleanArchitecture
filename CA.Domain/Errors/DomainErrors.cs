@@ -13,6 +13,11 @@ namespace CA.Domain.Errors
             public static readonly Func<string, Error> AlreadyExist = number => new Error(
                 "Order.AlreadyExist",
                 $"The Order with the number: '{number}' already exist.");
+
+            public static readonly Func<Guid, Error> NotFound = Id => new Error(
+               "Order.NotFound",
+               $"The Order with the Id: '{Id}' not found.");
+
         }
     }
 }

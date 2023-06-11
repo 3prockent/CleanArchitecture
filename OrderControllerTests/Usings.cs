@@ -1,1 +1,12 @@
 global using Xunit;
+global using Moq;
+global using Moq.EntityFrameworkCore;
+global using CA.Application.Interfaces;
+global using CA.Application.Orders.Commands;
+global using CA.Domain.Entities;
+global using CA.Domain.Errors;
+global using CA.Domain.Shared;
+global using AC.WebAPI.Controllers;
+global using CA.Application.Orders.Queries;
+global using FluentAssertions;
+global using MediatR;

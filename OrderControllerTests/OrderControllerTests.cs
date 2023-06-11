@@ -1,20 +1,4 @@
-﻿using AC.WebAPI.Controllers;
-using CA.Application.Interfaces;
-using CA.Application.Orders.Commands;
-using CA.Application.Orders.Queries;
-using CA.Domain.Entities;
-using CA.Domain.Errors;
-using CA.Domain.Shared;
-using FluentAssertions;
-using MediatR;
-using Microsoft.AspNetCore.Mvc;
-using Moq;
-using Moq.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace Tests
 {

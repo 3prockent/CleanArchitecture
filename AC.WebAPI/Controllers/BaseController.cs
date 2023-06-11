@@ -7,13 +7,11 @@ namespace AC.WebAPI.Controllers
     [Route("api/[controller]")]
     public abstract class BaseApiController : ControllerBase
     {
-        private IMediator? _mediator;
-        public IMediator Mediator { get => _mediator;}
+        public IMediator Mediator { get; set; }
 
         public BaseApiController(IMediator mediator)
         {
-            _mediator = mediator;
+            Mediator = mediator;
         }
     }
-
 }
