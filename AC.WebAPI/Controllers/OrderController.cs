@@ -10,10 +10,10 @@ namespace AC.WebAPI.Controllers
     public class OrderController : BaseApiController
     {
         public OrderController(IMediator mediator) : base(mediator) {}
-        [HttpGet, Route("")]
-        public async Task<IActionResult> GetAll(CancellationToken ct)
+        [HttpGet, Route("{skip?}/{count?}")]
+        public async Task<IActionResult> GetAll(int? count, int? skip, CancellationToken ct)
         {
-            return Ok(await Mediator.Send(new GetAllOrdersQuery(), ct));
+            return Ok(await Mediator.Send(new GetAllOrdersQuery(count,skip), ct));
         }
 
         [HttpGet, Route("{id}")]

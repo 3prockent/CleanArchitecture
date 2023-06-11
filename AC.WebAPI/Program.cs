@@ -23,10 +23,6 @@ builder.Services.AddScoped(typeof(IDbContext), typeof(ShopDbContext));
 
 builder.Services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies()); //application
 
-var assembly = AppDomain.CurrentDomain.Load("CA.Persistence");
-
-
-
 var app = builder.Build();
 
 #region Configuration
