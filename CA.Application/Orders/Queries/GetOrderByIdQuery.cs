@@ -2,6 +2,7 @@
 using CA.Domain.Entities;
 using CA.Domain.Shared;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,8 @@ namespace CA.Application.Orders.Queries
             }
             public async Task<Result<Order>> Handle(GetOrderByIdQuery query, CancellationToken cancellationToken)
             {
-                var product = _context.Orders.Where(a => a.Id == query.Id).FirstOrDefault();
+
+                var product = await _context.Orders.Where(a => a.Id == query.Id).FirstOrDefaultAsync();
                 if (product == null)
                 {
                     return Result.Failure<Order>(new Error(

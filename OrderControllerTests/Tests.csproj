@@ -25,7 +25,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AC.WebAPI\AC.WebAPI.csproj" />
-    <ProjectReference Include="..\CA.Application\CA.Application.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3941,8 +3941,8 @@
     },
     "CA.Domain/1.0.0": {
       "type": "project",
-      "path": "../ClassLibrary2/CA.Domain.csproj",
-      "msbuildProject": "../ClassLibrary2/CA.Domain.csproj"
+      "path": "../CA.Domain/CA.Domain.csproj",
+      "msbuildProject": "../CA.Domain/CA.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {

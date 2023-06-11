@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vlad\\Desktop\\CleanArchitecture\\AC.WebAPI\\AC.WebAPI.csproj": {}
+    "C:\\Users\\Vlad\\Desktop\\CleanArchitecture\\CA.Domain\\CA.Domain.csproj": {}
   },
   "projects": {
     "C:\\Users\\Vlad\\Desktop\\CleanArchitecture\\AC.WebAPI\\AC.WebAPI.csproj": {
@@ -173,10 +173,10 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "C:\\Users\\Vlad\\Desktop\\CleanArchitecture\\CA.Domain\\CA.Domain.csproj",
-        "projectName": "CA.Domain",
+        "projectName": "Tests",
         "projectPath": "C:\\Users\\Vlad\\Desktop\\CleanArchitecture\\CA.Domain\\CA.Domain.csproj",
         "packagesPath": "C:\\Users\\Vlad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vlad\\Desktop\\CleanArchitecture\\CA.Domain\\obj\\",
+        "outputPath": "C:\\Users\\Vlad\\Desktop\\CleanArchitecture\\OrderControllerTests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Vlad\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -192,7 +192,14 @@
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Vlad\\Desktop\\CleanArchitecture\\AC.WebAPI\\AC.WebAPI.csproj": {
+                "projectPath": "C:\\Users\\Vlad\\Desktop\\CleanArchitecture\\AC.WebAPI\\AC.WebAPI.csproj"
+              },
+              "C:\\Users\\Vlad\\Desktop\\CleanArchitecture\\CA.Application\\CA.Application.csproj": {
+                "projectPath": "C:\\Users\\Vlad\\Desktop\\CleanArchitecture\\CA.Application\\CA.Application.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
