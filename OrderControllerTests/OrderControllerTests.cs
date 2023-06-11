@@ -41,7 +41,7 @@ namespace Tests
 
             //Act
 
-            IActionResult result = await controller.GetAll();
+            IActionResult result = await controller.GetAll(default);
 
             //Assert
             result.Should().BeOfType<OkObjectResult>();

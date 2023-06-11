@@ -89,7 +89,7 @@ namespace Tests
 
             //Assert
             _dbContextMock.Verify(
-                x=>x.Orders.Add(It.Is<Order>(o=>o.Id == result.Value)),
+                x => x.Orders.Add(It.Is<Order>(o => o.Id == result.Value)),
                 Times.Once);
         }
 

@@ -24,7 +24,7 @@ namespace CA.Application.Orders.Queries
             public async Task<Result<Order>> Handle(GetOrderByIdQuery query, CancellationToken cancellationToken)
             {
 
-                var product = await _context.Orders.Where(a => a.Id == query.Id).FirstOrDefaultAsync();
+                var product = await _context.Orders.Where(a => a.Id == query.Id).FirstOrDefaultAsync(cancellationToken);
                 if (product == null)
                 {
                     return Result.Failure<Order>(new Error(

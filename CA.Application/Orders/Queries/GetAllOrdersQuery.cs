@@ -17,7 +17,7 @@ namespace CA.Application.Orders.Queries
         }
         public async Task<Result<IEnumerable<Order>>> Handle(GetAllOrdersQuery query, CancellationToken cancellationToken)
         {
-            return await _context.Orders.ToListAsync();
+            return await _context.Orders.ToListAsync(cancellationToken);
    
         }
     }

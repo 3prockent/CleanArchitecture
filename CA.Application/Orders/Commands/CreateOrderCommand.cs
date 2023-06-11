@@ -43,7 +43,7 @@ internal class CreateOrderCommandHandler : ICommandHandler<CreateOrderCommand, G
             Comment = command.Comment,
             Amount = command.Amount
         };
-        _context.Orders.Add(product);
+        await _context.Orders.AddAsync(product, cancellationToken);
         await _context.SaveChangesAsync();
         return product.Id;
     }

@@ -1,36 +1,35 @@
 ﻿using CA.Application.Orders.Commands;
 using CA.Application.Orders.Queries;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AC.WebAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/orders")]
     [ApiController]
     public class OrderController : BaseApiController
     {
 
         public OrderController(IMediator mediator) : base(mediator)
         {
-            
+
         }
-        [HttpGet, Route("GetAll")]
-        public async Task<IActionResult> GetAll()
+        [HttpGet, Route("")]
+        public async Task<IActionResult> GetAll(CancellationToken ct)
         {
-            return Ok(await Mediator.Send(new GetAllOrdersQuery()));
+            return Ok(await Mediator.Send(new GetAllOrdersQuery(), ct));
         }
 
-        [HttpGet, Route("GetById/{id}")]
-        public async Task<IActionResult> GetById(Guid id)
+        [HttpGet, Route("{id}")]
+        public async Task<IActionResult> GetById(Guid id, CancellationToken ct)
         {
-            return Ok(await Mediator.Send(new GetOrderByIdQuery{Id=id }));
+            return Ok(await Mediator.Send(new GetOrderByIdQuery { Id = id }, ct));
         }
 
-        [HttpPost, Route("CreateOrder")]
-        public async Task<IActionResult> CreateOrder(CreateOrderCommand command)
+        [HttpPost, Route("")]
+        public async Task<IActionResult> Create(CreateOrderCommand command, CancellationToken ct)
         {
-            return Ok(await Mediator.Send(command));
+            return Ok(await Mediator.Send(command, ct));
         }
     }
 }
