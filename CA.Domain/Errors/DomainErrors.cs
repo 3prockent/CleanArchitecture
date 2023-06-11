@@ -19,5 +19,11 @@ namespace CA.Domain.Errors
                $"The Order with the Id: '{Id}' not found.");
 
         }
+
+        public static class General
+        {
+            public static readonly string SuccessWithError = "Result cannot be successful with Error";
+            public static readonly string FailedWithoutError = "Result cannot be failed without Error";
+        }
     }
 }

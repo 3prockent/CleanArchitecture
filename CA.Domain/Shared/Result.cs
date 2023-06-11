@@ -1,4 +1,6 @@
-﻿namespace CA.Domain.Shared
+﻿using CA.Domain.Errors;
+
+namespace CA.Domain.Shared
 {
     public class Result
     {
@@ -6,12 +8,12 @@
         {
             if (isSuccess && error != Error.None)
             {
-                throw new InvalidOperationException();
+                throw new InvalidOperationException(DomainErrors.General.SuccessWithError);
             }
 
             if (!isSuccess && error == Error.None)
             {
-                throw new InvalidOperationException();
+                throw new InvalidOperationException(DomainErrors.General.FailedWithoutError);
             }
 
             IsSuccess = isSuccess;
