@@ -16,8 +16,6 @@ builder.Services.AddDbContext<ShopDbContext>(options =>
                 options.UseSqlServer(
                     builder.Configuration.GetConnectionString("DefaultConnection")));
 
-//builder.Services.AddScoped<IDbContext>(provider => provider.GetService<ShopDbContext>());
-
 builder.Services.AddScoped(typeof(IDbContext), typeof(ShopDbContext));
 
 
