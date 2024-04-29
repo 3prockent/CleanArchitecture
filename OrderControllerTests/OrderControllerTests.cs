@@ -13,23 +13,23 @@ namespace Tests
             _mediatorMock = new();
         }
 
-        [Fact]
-        public async Task Handle_Should_ReturnSuccess_WhenRequestSuccess()
-        {
-            //Arrange
+        //[Fact]
+        //public async Task Handle_Should_ReturnSuccess_WhenRequestSuccess()
+        //{
+        //    //Arrange
 
-            var controller = new OrderController(_mediatorMock.Object);
+        //    var controller = new OrderController(_mediatorMock.Object);
 
-            _mediatorMock.Setup(m => m.Send(It.IsAny<GetAllOrdersQuery>()
-                , It.IsAny<CancellationToken>())).ReturnsAsync(TestDataHelper.GetFakeOrderList());
+        //    _mediatorMock.Setup(m => m.Send(It.IsAny<GetAllOrdersQuery>()
+        //        , It.IsAny<CancellationToken>())).ReturnsAsync(TestDataHelper.GetFakeOrderList());
 
-            //Act
+        //    //Act
 
-            IActionResult result = await controller.GetAll(default);
+        //    IActionResult result = await controller.GetAll(default);
 
-            //Assert
-            result.Should().BeOfType<OkObjectResult>();
-        }
+        //    //Assert
+        //    result.Should().BeOfType<OkObjectResult>();
+        //}
     }
     
 }

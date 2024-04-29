@@ -16,10 +16,15 @@ namespace CA.Application.Orders.Commands
 {
     public class CreateOrderCommand : ICommand<Guid>
     {
-        public string? ContactName { get; set; }
-        public string? Number { get; set; }
+        public string? UserName { get; set; }
+        public decimal TotalAmount { get; set; }
+        public string? OrderNumber { get; set; }
         public string? Comment { get; set; }
-        public decimal Amount { get; set; }
+
+        //Personal info
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string EmailAddress { get; set; }
     }
 }
 
@@ -32,17 +37,20 @@ internal class CreateOrderCommandHandler : ICommandHandler<CreateOrderCommand, G
     }
     public async Task<Result<Guid>> Handle(CreateOrderCommand command, CancellationToken cancellationToken)
     {
-        if (String.IsNullOrEmpty(command.Number))
-            return Result.Failure<Guid>(DomainErrors.Order.EmptyNumber);
-        if (await _context.Orders.AnyAsync(x => x.Number == command.Number, cancellationToken))
-            return Result.Failure<Guid>(DomainErrors.Order.AlreadyExist(command.Number));
+        if (String.IsNullOrEmpty(command.OrderNumber))
+            return Result.Failure<Guid>(OrderErrors.EmptyNumber);
+        if (await _context.Orders.AnyAsync(x => x.OrderNumber == command.OrderNumber, cancellationToken))
+            return Result.Failure<Guid>(OrderErrors.AlreadyExist(command.OrderNumber));
         var product = new Order()
         {
             Id = Guid.NewGuid(),
-            ContactName = command.ContactName,
-            Number = command.Number,
+            UserName = command.UserName,
+            OrderNumber = command.OrderNumber,
             Comment = command.Comment,
-            Amount = command.Amount
+            TotalAmount = command.TotalAmount,
+            FirstName = command.FirstName,
+            LastName = command.LastName,
+            EmailAddress = command.LastName
         };
         await _context.Orders.AddAsync(product, cancellationToken);
         await _context.SaveChangesAsync();

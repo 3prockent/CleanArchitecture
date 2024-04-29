@@ -1,10 +1,14 @@
-﻿namespace CA.Domain.Entities
+﻿namespace CA.Domain.Entities;
+
+public class Order : BaseEntity
 {
-    public class Order : BaseEntity
-    {
-        public string? ContactName { get; set; }
-        public string? Number { get; set; }
-        public string? Comment { get; set; }
-        public decimal Amount { get; set; }
-    }
+    public string? UserName { get; set; }
+    public decimal TotalAmount { get; set; }
+    public string? OrderNumber { get; set; }
+    public string? Comment { get; set; }
+
+    //Personal info
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string EmailAddress { get; set; }
 }

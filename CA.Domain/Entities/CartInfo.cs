@@ -1,0 +1,29 @@
+﻿namespace CA.Domain.Entities;
+
+public class CartInfo
+{
+    public string UserName { get; set; }
+    public List<CartItem> Items { get; set; } = new List<CartItem>();
+
+    public CartInfo()
+    {
+    }
+
+    public CartInfo(string userName)
+    {
+        UserName = userName;
+    }
+    
+    public decimal TotalPrice 
+    { 
+        get
+        {
+            decimal totalprice = 0;
+            foreach (var item in Items)
+            {
+                totalprice += item.Price * item.Quantity;
+            }
+            return totalprice;
+        }
+    }
+}

@@ -28,7 +28,7 @@ namespace CA.Application.Orders.Queries
                 var product = await _context.Orders.FirstOrDefaultAsync(order => order.Id == query.Id, cancellationToken);
                 if (product == null)
                 {
-                    return Result.Failure<Order>(DomainErrors.Order.NotFound(query.Id));
+                    return Result.Failure<Order>(OrderErrors.NotFound(query.Id));
                 }
                 return product;
             }
