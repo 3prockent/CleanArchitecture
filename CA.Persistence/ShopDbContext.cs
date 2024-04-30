@@ -74,11 +74,66 @@ namespace CA.Persistence
                 Price = 1299.00M,
                 Category = "Gaming Monitors"
             });
+
+            modelBuilder.Entity<Order>().HasData(GetRandomOrders(6));
+
         }
 
         public async Task<int> SaveChangesAsync()
         {
             return await base.SaveChangesAsync();
+        }
+
+        private static List<Order> GetRandomOrders(int orderCount)
+        {
+            var orders = new List<Order>();
+
+            Random random = new Random();
+
+            for (int i = 1; i <= orderCount; i++)
+            {
+                Order order = new Order
+                {
+                    Id = GetId(i - 1),
+                    UserName = $"User{i}",
+                    TotalAmount = random.Next(100, 1000),
+                    OrderNumber = $"ORD-{i}",
+                    Comment = $"comment for order {i}",
+                    FirstName = GetRandomFirstName(),
+                    LastName = GetRandomLastName(),
+                    EmailAddress = $"user{i}@example.com"
+                };
+
+                orders.Add(order);
+            }
+
+            return orders;
+        }
+        private static Guid GetId(int i)
+        {
+            Guid[] guids =
+            {
+            Guid.Parse("2a510554-0de4-43cc-a4aa-1b0c7aecde92"),
+            Guid.Parse("8c2a2a4f-0ec7-4497-96fb-364871bb5e2e"),
+            Guid.Parse("8b0fef59-c999-4e4f-85e4-27bffc0feb5d"),
+            Guid.Parse("58448317-cb14-417b-af1a-3c2b3b4bacb7"),
+            Guid.Parse("0d451300-edbb-4ccf-86bd-b6efc5b06098"),
+            Guid.Parse("0cfa8b6b-111e-48f5-9444-fb9db49b7483")
+        };
+            return guids[i];
+        }
+        private static string GetRandomFirstName()
+        {
+            string[] firstNames = { "John", "Emma", "Michael", "Sophia", "William", "Olivia", "James", "Amelia", "Alexander", "Charlotte" };
+            Random random = new Random();
+            return firstNames[random.Next(firstNames.Length)];
+        }
+
+        private static string GetRandomLastName()
+        {
+            string[] lastNames = { "Smith", "Johnson", "Brown", "Taylor", "Anderson", "Wilson", "Miller", "Davis", "Garcia", "Martinez" };
+            Random random = new Random();
+            return lastNames[random.Next(lastNames.Length)];
         }
     }
 }
