@@ -28,6 +28,10 @@ public class CartRepository : ICartRepository
     
     public async Task<CartInfo> UpdateCart(CartInfo cartInfo)
     {
+        var expirationOption = new DistributedCacheEntryOptions()
+        {
+            AbsoluteExpiration = DateTimeOffset.UtcNow.AddMinutes(1)
+        };
         await _redisCache.SetStringAsync(cartInfo.UserName, JsonConvert.SerializeObject(cartInfo));
         
         return await GetCartInfo(cartInfo.UserName);

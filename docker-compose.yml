@@ -6,13 +6,28 @@ services:
     container_name: clean_arch
     ports:
       - "8080:80"
+
   sql:
     image: "mcr.microsoft.com/mssql/server"
     container_name: sql_server2022
     ports: # not actually needed, because the two services are on the same network.
-      - "1435:1433" 
+      - "1434:1433" 
     volumes:
       - "E:/Hlam/backups:/var/opt/mssql/backup"
     environment:
       - ACCEPT_EULA=y
       - MSSQL_SA_PASSWORD=Mssql!Passw0rd
+
+  redis:
+    image: redis:7-alpine
+    restart: always
+    ports:
+      - "6382:6379"
+    environment:
+      REDIS_PASSWORD: secret
+
+  redis-insight:
+    image: redis/redisinsight:latest
+    restart: always
+    ports:
+      - "5541:5540"

@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using CA.Persistence;
 using CA.Application.Interfaces;
 using CA.Application.Repositories;
+using CA.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,15 +16,18 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<ShopDbContext>(options =>
                 options.UseSqlServer(
-                    builder.Configuration.GetConnectionString("DefaultConnection")));
+                    builder.Configuration.GetConnectionString("DockerConnection")));
 
 builder.Services.AddStackExchangeRedisCache(options =>
 {
-    options.Configuration = builder.Configuration.GetValue<String>("CacheSettings:DevConnectionString");
+    options.Configuration = builder.Configuration.GetValue<String>("CacheSettings:DockerConnectionString");
 });
 
 builder.Services.AddScoped(typeof(IDbContext), typeof(ShopDbContext));
 builder.Services.AddScoped(typeof(ICartRepository), typeof(CartRepository));
+builder.Services.AddScoped(typeof(ICartService), typeof(CartService));
+builder.Services.AddScoped(typeof(ICatalogService), typeof(CatalogService));
+builder.Services.AddScoped(typeof(IOrderService), typeof(OrderService));
 
 
 
